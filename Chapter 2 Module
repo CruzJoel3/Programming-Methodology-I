@@ -1,3 +1,9 @@
+/* 
+Write a program that inputs three integers from the keyboard, 
+and prints the sum, average, product, smallest, and largest 
+if these numbers. 
+*/
+
 #include <iostream>
 
 using namespace std;
