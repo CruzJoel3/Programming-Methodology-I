@@ -1,0 +1,36 @@
+/*
+Write a program that inputs a series of integers and passes 
+them one at a time to funciton even, which uses the
+modulus operator to determine whether an integer is even. 
+The function should take an integer argument and
+return true if the integer is even and false otherwise
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int prime (int);
+
+int main (){
+
+int x;
+cout << "Enter an integer: ";
+cin >> x;
+
+prime(x);
+}
+
+int prime(int x)
+{
+    if (x%2 == 0)
+    {
+        cout << x << " is an even integer\n";
+    }
+    else
+    {
+        cout << x << " is an odd integer\n";
+    }
+    return 0;
+}
+
