@@ -1,0 +1,79 @@
+/*
+Write a program that plays the game of “guess the number” as follows:
+
+Your program chooses the number to be guessed by selecting an integer
+at random in the range 1 to 1000. The player then types a first guess. 
+If the player’s guess is incorrect, your program should loop until the 
+player finally gets the number right. Your program should keep telling 
+the player Too high or Too low to help the player “zero in” on the correct 
+answer.
+*/
+
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+
+using namespace std;
+
+int main (){
+
+int number;
+int guess;
+char again;
+cout << "I have a number between 1 and 1000.\nCan you guess my number?\nPlease type your first guess: ";
+cin >>guess;
+srand(time(0));
+number = rand()%1001;
+    if (number == 0)
+        {
+            number++;
+        }
+if (guess != number)
+    {
+        while (guess != number)
+        {
+             if (guess > number)
+            {
+                cout << "\nToo high. Try again: ";
+                cin >> guess;
+                continue;
+            }
+        else if(guess < number)
+            {
+                cout << "\nToo low. Try again: ";
+                cin >> guess;
+                continue;
+            }
+        }
+    }
+
+while (guess == number)
+        {
+            cout << "Excellent! You guessed the number! Would you like to try again(y or n)?: ";
+            cin >>again;
+    if (again == 'n')
+        break;
+    else if (again == 'y')
+        {
+        cout << "\nGuess?: ";
+        cin >> guess;
+        number = rand()%1001;
+          while (guess != number)
+        {
+             if (guess > number)
+            {
+                cout << "\nToo high. Try again: ";
+                cin >> guess;
+                continue;
+            }
+        else if(guess < number)
+            {
+                cout << "\nToo low. Try again: ";
+                cin >> guess;
+                continue;
+            }
+        }
+        }
+    }
+cout << "Goodbye!\n";
+}
